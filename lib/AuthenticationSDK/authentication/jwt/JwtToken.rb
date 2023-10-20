@@ -7,7 +7,7 @@ require 'time'
 require_relative '../../core/ITokenGeneration.rb'
 require_relative '../../util/Constants.rb'
 require_relative '../../util/ExceptionHandler.rb'
-require_relative '../../util/Cache.rb'
+require_relative '../../util/certificate/Cache.rb'
 require_relative '../../authentication/payloadDigest/digest.rb'
 require_relative '../../logging/log_factory.rb'
 
@@ -34,7 +34,7 @@ public
 
       # Generating certificate.
       cacheObj = ActiveSupport::Cache::MemoryStore.new
-      x5Cert = Cache.new.fetchCachedCertificate(filePath, p12File, merchantconfig_obj.keyPass, cacheObj)
+      x5Cert = Certificate::Cache.new.fetchCached(filePath, p12File, merchantconfig_obj.keyPass, cacheObj)
 
       # Generating Public key.
       publicKey = OpenSSL::PKey::RSA.new(p12FilePath.key.public_key)

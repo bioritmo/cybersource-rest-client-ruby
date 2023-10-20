@@ -14,7 +14,7 @@ Swagger Codegen version: 2.2.3
 require 'AuthenticationSDK/util/Utility.rb'
 require 'AuthenticationSDK/util/PropertiesUtil.rb'
 require 'AuthenticationSDK/util/Constants.rb'
-require 'AuthenticationSDK/util/Cache.rb'
+require 'AuthenticationSDK/util/certificate/Cache.rb'
 require 'AuthenticationSDK/util/ExceptionHandler.rb'
 require 'AuthenticationSDK/logging/log_configuration.rb'
 require 'AuthenticationSDK/logging/log_factory.rb'
