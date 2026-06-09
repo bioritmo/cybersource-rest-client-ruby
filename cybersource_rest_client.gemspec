@@ -37,13 +37,13 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'time', '~> 0.2.2'
   s.add_runtime_dependency 'jose', '~> 1.2'
 
-  s.add_development_dependency 'rubocop', '~> 0.57.2'
-  s.add_development_dependency 'rspec', '~> 3.12', '>= 3.12.0'
-  s.add_development_dependency 'vcr', '~> 5.0', '>= 5.0.0'
-  s.add_development_dependency 'autotest', '~> 4.4', '>= 4.4.6'
+  s.add_development_dependency 'rubocop', '>=1.31.0','<1.31.1'
+  s.add_development_dependency 'rspec', '~> 3.13', '>= 3.13.2'
+  s.add_development_dependency 'vcr', '~> 6.4.0'
+  s.add_development_dependency 'autotest', '~> 5.0', '>= 5.0.0'
   s.add_development_dependency 'autotest-rails-pure', '~> 4.1', '>= 4.1.2'
   s.add_development_dependency 'autotest-growl', '~> 0.2', '>= 0.2.16'
-  s.add_development_dependency 'autotest-fsevent', '~> 0.2', '>= 0.2.12'
+  s.add_development_dependency 'autotest-fsevent', '~> 0.3.1', '>= 0.3.1'
   
   s.require_paths = ["lib"]
 end
