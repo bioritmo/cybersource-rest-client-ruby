@@ -10,7 +10,7 @@ require_relative '../util/Constants.rb'
 require_relative '../logging/log_factory.rb'
 require_relative '../logging/log_configuration.rb'
 public
-module CyberSource
+module Mle
 # P12 file certificate Cache
   class Cache
     @@cache_obj = ActiveSupport::Cache::MemoryStore.new

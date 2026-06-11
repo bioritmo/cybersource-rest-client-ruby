@@ -40,7 +40,7 @@ public
       @log_obj.logger.info('Encrypting request payload')
       @log_obj.logger.debug('LOG_REQUEST_BEFORE_MLE: ' + requestBody)
 
-      mleCertificate = CyberSource::Cache.new.getRequestMLECertificateFromCache(merchantConfig)
+      mleCertificate = Mle::Cache.new.getRequestMLECertificateFromCache(merchantConfig)
 
       if mleCertificate.nil? && Constants::AUTH_TYPE_HTTP.downcase == merchantConfig.authenticationType.downcase
         @log_obj.logger.debug("The certificate to use for MLE for requests is not provided in the merchant configuration. Please ensure that the certificate path is provided.")
@@ -185,7 +185,7 @@ public
       end
 
       # Second priority - Return private key loaded from merchantConfig.responseMlePrivateKeyFilePath
-      responseMlePrivateKey = CyberSource::Cache.new.getMLEResponsePrivateKeyFromFilePath(merchantConfig)
+      responseMlePrivateKey = Mle::Cache.new.getMLEResponsePrivateKeyFromFilePath(merchantConfig)
       return responseMlePrivateKey
     end
 
@@ -216,7 +216,7 @@ public
 
       if p12_file
         @log_obj.logger.debug('P12/PFX file detected, checking if it is a CyberSource certificate')
-        cached_data = CyberSource::Cache.new.get_mle_kid_data_from_cache(merchant_config)
+        cached_data = Mle::Cache.new.get_mle_kid_data_from_cache(merchant_config)
         if !cached_data.nil?
           if !cached_data.kid.nil?
             # KID present means it's a CyberSource P12, use it
