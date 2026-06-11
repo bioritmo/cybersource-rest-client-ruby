@@ -46,7 +46,7 @@ public
           @log_obj.logger.debug('Generating JWT token using P12 certificate (RS256)')
 
           # Get cached certificate and private key
-          cache_value = Cache.new.fetchCachedP12Certificate(merchantconfig_obj)
+          cache_value = CyberSource::Cache.new.fetchCachedP12Certificate(merchantconfig_obj)
           private_key = cache_value.private_key
           jwt_cert_obj = cache_value.cert
 

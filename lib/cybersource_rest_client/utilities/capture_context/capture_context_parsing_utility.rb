@@ -73,7 +73,7 @@ module CyberSource
             rescue CyberSource::Authentication::Util::JWT::JwtSignatureValidationException => e
               # If verification failed with cached key, try once more with fresh key from API
               public_key = fetch_public_key_from_api(kid, run_environment)
-              cache = Cache.new
+              cache = CyberSource::Cache.new
               cache.addPublicKeyToCache(run_environment, kid, public_key) rescue nil
               
               CyberSource::Authentication::Util::JWT::JWTUtility.verify_jwt(jwt_value, public_key)
@@ -82,7 +82,7 @@ module CyberSource
           end
 
           def get_public_key(kid, run_environment)
-            cache = Cache.new
+            cache = CyberSource::Cache.new
             cached_key = cache.getPublicKeyFromCache(run_environment, kid) rescue nil
             return cached_key if cached_key
             
