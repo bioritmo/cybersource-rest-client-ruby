@@ -1,7 +1,7 @@
 require_relative '../logging/log_factory.rb'
 require 'jose'
 require 'json'
-require_relative './Cache'
+require_relative './mle/Cache'
 require_relative './Constants'
 require_relative './ExceptionHandler'
 require_relative './AuthJWEUtility'

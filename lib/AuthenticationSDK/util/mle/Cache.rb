@@ -2,13 +2,13 @@ require 'openssl'
 require 'base64'
 require 'active_support'
 require 'thread'
-require_relative 'CacheValue'
-require_relative 'CachedMLEKId'
-require_relative 'CertificateUtility'
-require_relative 'Utility'
-require_relative '../util/Constants.rb'
-require_relative '../logging/log_factory.rb'
-require_relative '../logging/log_configuration.rb'
+require_relative '../CacheValue'
+require_relative '../CachedMLEKId'
+require_relative '../CertificateUtility'
+require_relative '../Utility'
+require_relative '../Constants.rb'
+require_relative '../../logging/log_factory.rb'
+require_relative '../../logging/log_configuration.rb'
 
 public
 # P12 file certificate Cache
@@ -306,4 +306,3 @@ public
       end
     end
   end
-end

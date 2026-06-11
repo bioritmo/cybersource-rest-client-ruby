@@ -3,7 +3,7 @@ require 'json'
 require_relative '../../../AuthenticationSDK/util/JWT/JWTUtility'
 require_relative '../../../AuthenticationSDK/util/JWT/JWTExceptions'
 require_relative '../../../AuthenticationSDK/util/Constants'
-require_relative '../../../AuthenticationSDK/util/Cache'
+require_relative '../../../AuthenticationSDK/util/mle/Cache'
 
 module CyberSource
   module Utilities
