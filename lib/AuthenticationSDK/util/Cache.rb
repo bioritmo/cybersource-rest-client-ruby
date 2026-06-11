@@ -9,7 +9,7 @@ require_relative 'Utility'
 require_relative '../util/Constants.rb'
 require_relative '../logging/log_factory.rb'
 require_relative '../logging/log_configuration.rb'
-
+public
 module CyberSource
 # P12 file certificate Cache
   class Cache
